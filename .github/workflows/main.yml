@@ -70,9 +70,10 @@ concurrency:
 
 jobs:
   build:
-    name: stuff
+    name: Build YTLite
     runs-on: macos-latest
-    permissions: write-all
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Main
@@ -306,6 +307,8 @@ jobs:
 
       - name: Upload to GitHub Releases
         uses: softprops/action-gh-release@v2.4.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ytp-${{ github.run_number }}
           name: YouTubePlus v${{ inputs.tweak_version }} (${{ github.run_number }})
