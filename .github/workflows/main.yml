@@ -72,11 +72,7 @@ jobs:
   build:
     name: stuff
     runs-on: macos-latest
-    permissions:
-      contents: write
-      actions: write
-      pull-requests: write
-      administration: write
+    permissions: write-all
 
     steps:
       - name: Checkout Main
