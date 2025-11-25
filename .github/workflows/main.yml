@@ -74,6 +74,7 @@ jobs:
     runs-on: macos-latest
     permissions:
       contents: write
+      actions: write
 
     steps:
       - name: Checkout Main
@@ -312,6 +313,7 @@ jobs:
           name: YouTubePlus v${{ inputs.tweak_version }} (${{ github.run_number }})
           files: YouTubePlus_${{ inputs.tweak_version }}.ipa
           draft: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Output Release URL
         run: |
