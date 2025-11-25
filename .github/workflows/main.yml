@@ -72,7 +72,8 @@ jobs:
   build:
     name: Build YTLite
     runs-on: macos-latest
-    permissions: write-all
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Main
@@ -308,6 +309,8 @@ jobs:
         uses: softprops/action-gh-release@v2.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: 'r3act0r'
+          GITHUB_EMAIL: 'hesposito@crimson.ua.edu'
         with:
           tag_name: ytp-${{ github.run_number }}
           name: YouTubePlus v${{ inputs.tweak_version }} (${{ github.run_number }})
