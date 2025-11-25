@@ -312,7 +312,7 @@ jobs:
           name: YouTubePlus v${{ inputs.tweak_version }} (${{ github.run_number }})
           files: YouTubePlus_${{ inputs.tweak_version }}.ipa
           draft: true
-          token: ${{ secrets.my_custom_token }}
+          token: ${{ secrets.MY_CUSTOM_TOKEN }}
 
       - name: Output Release URL
         run: |
